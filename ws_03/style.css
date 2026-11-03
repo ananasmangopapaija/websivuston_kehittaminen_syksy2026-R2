@@ -67,5 +67,31 @@ table {
 .ruokataulukko th {
   background-color: lightblue;
 }
+.transition-button {
+  padding: 0;
+  display: block;
+  margin: 0 auto;
+  border: 0;
+  background: lightblue;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
 
 
+.transition-button img {
+  display: block;
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  
+}
+
+.transition-button:hover {
+  transform: scale(1.05);
+}
+.image-center {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
