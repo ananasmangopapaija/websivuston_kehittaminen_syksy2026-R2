@@ -71,9 +71,29 @@
         <input type="email" id="email" name="email">
         <input type="submit" value="Submit">
     </form>
-    
-    
 
-    
+    <div class="visitor-counter" aria-live="polite">
+        <span class="visitor-counter-label">Kävijöitä</span>
+        <span class="visitor-counter-count" id="visitor-count">0</span>
+    </div>
+
+    <script>
+        const visitorCountElement = document.getElementById("visitor-count");
+
+        try {
+            const storageKey = "jani-page-visitor-count";
+            const savedCount = Number(localStorage.getItem(storageKey));
+            const visitCount = Number.isSafeInteger(savedCount) && savedCount >= 0
+                ? savedCount + 1
+                : 1;
+
+            localStorage.setItem(storageKey, String(visitCount));
+            visitorCountElement.textContent = String(visitCount);
+        } catch (error) {
+            console.error("Could not update the visitor counter.", error);
+            visitorCountElement.textContent = "–";
+            visitorCountElement.setAttribute("aria-label", "Kävijälaskuri ei ole käytettävissä");
+        }
+    </script>
 </body>
 </html>
