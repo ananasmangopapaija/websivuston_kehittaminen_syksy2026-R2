@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(76, 146, 158);
+  background-color: rgb(150, 216, 228);
 }
 
 p {
@@ -9,10 +9,14 @@ p {
   border: 2px solid black;
 }
 .content-box {
+  box-sizing: border-box;
+  width: 500px;
+  max-width: 100%;
   padding: 20px;
-  margin: 10px;
-  background-color: #ccbf0c;
-  border: 1px solid #b80707;
+  margin: 10px auto;
+  background-color: #7db1b3;
+  border: 1px solid #070000;
+  border-radius: 12px;
 }
 
 table {
@@ -34,6 +38,9 @@ table {
       display: flex;
       flex-direction: column;
       gap: 10px;
+      width: 320px;
+      max-width: calc(100% - 32px);
+      margin: 20px auto;
     }
     
     label {
@@ -41,17 +48,21 @@ table {
     }
     
     input[type="text"], input[type="email"] {
+      box-sizing: border-box;
+      width: 100%;
       padding: 8px;
       border: 1px solid #6747be;
-      border-radius: 4px;
+      border-radius: 10px;
     }
     
     input[type="submit"] {
-      background-color: #4CAF50;
-      color: rgb(150, 158, 34);
+      background-color: lightpink;
+      color: black;
+      font-size: 18px;
+      font-weight: bold;
       padding: 10px;
       border: none;
-      border-radius: 4px;
+      border-radius: 999px;
       cursor: pointer;
     }
     
@@ -86,6 +97,13 @@ table {
   
 }
 
+.filter-image {
+  filter: grayscale(100%);
+  border: 10px solid black;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
 .transition-button:hover {
   transform: scale(1.05);
 }
@@ -95,3 +113,97 @@ table {
   justify-content: center;
   align-items: center;
 }
+h1, h2, h3, h4 {
+  text-align: center;
+}
+ol, ul {
+  width: fit-content;
+  margin: 0 auto;
+}
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 4px;
+}
+
+th, td {
+  border: 1px solid #9b0404;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: left;
+}
+table {
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 4px;
+}
+.laurea-link {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.laurea-link a {
+  display: inline-block;
+  padding: 12px 24px;
+  color: white;
+  background-color: #174a70;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.laurea-link a:hover {
+  background-color: #236b9e;
+}
+.animation-box {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 10px;
+  background-color: pink;
+  border-radius: 12px;
+  position: relative;
+  animation: move 2s infinite alternate ease-in-out;
+}
+
+@keyframes move {
+  from {
+    transform: translateX(-112px);
+  }
+  to {
+    transform: translateX(112px);
+  }
+}
+.pseudo-list li:nth-child(odd) {
+        background-color: lightgray;
+      }
+      
+      .pseudo-list li:nth-child(even) {
+        background-color: white;
+      }
+      .filter-image {
+        filter: grayscale(100%);
+        transition: filter 0.3s ease;
+        border: 10px solid black;
+        border-radius: 12px;
+        box-sizing: border-box;
+      }
+      
+      .filter-image:hover {
+        filter: grayscale(0%);
+      }
+      .quote {
+        position: relative;
+        padding-left: 20px;
+        font-style: italic;
+      }
+      
+      .quote::before {
+        content: '“';
+        font-size: 40px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: lightgray;
+      }
