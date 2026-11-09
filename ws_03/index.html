@@ -33,31 +33,31 @@
     </ol>
     
     <h2>Harrastukseni</h2>
-    <ul>
+    <ul class="harrastukset">
         <li>Lentosimulaattorit</li>
         <li>Tietokoneet</li>
         <li>Ilmailu</li>
     </ul>
   <table class="ruokataulukko">
     <tr>
-        <th>Näistä ruoista saatan pitää</th>
-        <th>Näistä ruoista ehkä pidän </th>
+        <th>Näistä ruoista pidän</th>
+        <th>Näistä ruoista en pidä </th>
     </tr>
     <tr>
         <td>Pizza, Kebab</td>
-        <td>Hampurilaine, TexMex</td>
+        <td>Aurajuusto, Kaalikaatikko</td>
     </tr>
     <tr>
-        <td>Kaalilaatikko, Mustamakkara</td>
+        <td>Hampurilainen, Texmex</td>
         <td>Maksalaatikko, Ryynimakkara</td>
     </tr>
     </table>
 
     <ul class="pseudo-list">
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
+        <li>Tykkään strategiapeleistä</li>
+        <li>Tykkään matkustella</li>
+        <li>Tykkään lukea historiaa</li>
+        <li>Tykkään tehdä HTML websivuja</li>
       </ul>
 
     <div class="laurea-link">
@@ -72,28 +72,5 @@
         <input type="submit" value="Submit">
     </form>
 
-    <div class="visitor-counter" aria-live="polite">
-        <span class="visitor-counter-label">Kävijöitä</span>
-        <span class="visitor-counter-count" id="visitor-count">0</span>
-    </div>
-
-    <script>
-        const visitorCountElement = document.getElementById("visitor-count");
-
-        try {
-            const storageKey = "jani-page-visitor-count";
-            const savedCount = Number(localStorage.getItem(storageKey));
-            const visitCount = Number.isSafeInteger(savedCount) && savedCount >= 0
-                ? savedCount + 1
-                : 1;
-
-            localStorage.setItem(storageKey, String(visitCount));
-            visitorCountElement.textContent = String(visitCount);
-        } catch (error) {
-            console.error("Could not update the visitor counter.", error);
-            visitorCountElement.textContent = "–";
-            visitorCountElement.setAttribute("aria-label", "Kävijälaskuri ei ole käytettävissä");
-        }
-    </script>
 </body>
 </html>
